@@ -5,161 +5,129 @@
   <title>Corliss Chan – Senior Business Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root {
-      --main-bg: #fff;
-      --accent-bg: #f7f6f3;
-      --header-bg: #fff;
-      --border: #e3e3e3;
-      --primary: #37352f;
-      --muted: #888;
-      --badge-bg: #ececec;
-      --badge-color: #333;
-      --shadow: 0 2px 8px rgba(0,0,0,0.04);
-      --radius: 8px;
+    :root{
+      --bg:#fdfdfd;
+      --card:#ffffff;
+      --text:#444;
+      --muted:#6c6c6c;
+      --accent:#5e8ba7;
+      --shadow:0 4px 18px rgba(0,0,0,.06);
+      --radius:16px;
+      --transition:.35s cubic-bezier(.4,0,.2,1);
     }
-    body {
-      background: var(--main-bg);
-      color: var(--primary);
-      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      min-height: 100vh;
-      letter-spacing: 0.01em;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      font-size:18px;
+      padding: clamp(20px, 5vw, 60px) clamp(10px, 4vw, 40px);
+      animation:fadeIn 1s;
     }
-    header {
-      background: var(--header-bg);
-      border-bottom: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      padding: 40px 0 20px;
-      text-align: center;
+    @keyframes fadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+    h1,h2,h3{letter-spacing:-.02em}
+    h1{font-size:clamp(2rem,5vw,3rem)}
+    h2{font-size:1.5rem;margin:3rem 0 1rem}
+    h3{font-size:1.15rem;margin-top:1.6rem}
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:2.2rem clamp(1.5rem,4vw,3rem);
+      margin-bottom:2rem;
+      transition:transform var(--transition),box-shadow var(--transition);
     }
-    header h1 {
-      font-size: 2.6rem;
-      font-weight: 700;
-      margin: 0 0 6px;
-      letter-spacing: -0.02em;
+    .card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.08)}
+    .pill{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      font-size:.8rem;
+      padding:.35rem .9rem;
+      border-radius:999px;
+      margin:.2rem .15rem;
+      letter-spacing:.02em;
     }
-    header p {
-      font-size: 1.15rem;
-      color: var(--muted);
-      margin: 4px 0;
+    a{color:var(--accent);text-decoration:none}
+    footer{
+      text-align:center;
+      margin-top:4rem;
+      font-size:.8rem;
+      color:var(--muted);
     }
-    .container {
-      max-width: 740px;
-      margin: 36px auto;
-      background: var(--accent-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 40px 32px 24px;
-      border: 1px solid var(--border);
-    }
-    h2 {
-      font-size: 1.45rem;
-      font-weight: 600;
-      margin-top: 36px;
-      margin-bottom: 16px;
-    }
-    h3 {
-      font-size: 1.15rem;
-      font-weight: 500;
-      margin-bottom: 3px;
-      margin-top: 24px;
-    }
-    ul {
-      padding-left: 24px;
-      margin: 8px 0 0 0;
-    }
-    li {
-      margin-bottom: 8px;
-    }
-    em {
-      color: var(--muted);
-      font-size: 0.97em;
-    }
-    a {
-      color: var(--primary);
-      text-decoration: underline;
-      border-radius: 4px;
-      transition: background 0.15s;
-      padding: 2px 6px;
-    }
-    a:hover {
-      background: #f0f0f0;
-    }
-    .badge {
-      display: inline-block;
-      background: var(--badge-bg);
-      color: var(--badge-color);
-      border-radius: 6px;
-      padding: 6px 14px;
-      font-size: 0.95em;
-      margin: 3px 8px 3px 0;
-      font-weight: 500;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-      border: 1px solid var(--border);
-    }
-    footer {
-      text-align: center;
-      padding: 30px 10px;
-      font-size: .98em;
-      color: var(--muted);
-      background: var(--accent-bg);
-      border-top: 1px solid var(--border);
-      margin-top: 40px;
-    }
-    @media (max-width: 600px) {
-      .container { padding: 20px 10px; }
-      header { padding: 24px 0 12px; }
-      h1 { font-size: 2rem; }
+    @media(max-width:600px){
+      body{font-size:16px}
+      h1{font-size:2rem}
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <section class="card">
     <h1>Corliss Chan</h1>
-    <p>Senior Business Analyst</p>
-    <p>📧 corlisschann@gmail.com &nbsp;|&nbsp; 📱 63344122</p>
-  </header>
-  <div class="container">
+    <p style="font-size:1.25rem;color:var(--muted)">Senior Business Analyst</p>
+    <p style="margin-top:.8rem">
+      📧 corlisschann@gmail.com<br>
+      📱 63344122
+    </p>
+  </section>
+
+  <section class="card">
     <h2>Experience</h2>
-    <h3>Senior Business Analyst @ PCCW Digital Solutions Limited</h3>
-    <p><em>Hong Kong | Sep 2024 – Jul 2025</em></p>
+
+    <h3>Senior Business Analyst – PCCW Digital Solutions Limited</h3>
+    <p style="color:var(--muted)">Hong Kong | Sep 2024 – Jul 2025</p>
     <ul>
       <li>Led BA & design for new CRM; gathered requirements from 30+ stakeholders.</li>
-      <li>Cut manual entry errors 20% by optimising ordering & permission flows.</li>
-      <li>Delivered 95% user-adoption within first month post-launch.</li>
+      <li>Cut manual entry errors 20 % by optimising ordering & permission flows.</li>
+      <li>Delivered 95 % user-adoption within first month post-launch.</li>
     </ul>
-    <h3>Senior Business Analyst @ Hong Kong Broadband Network</h3>
-    <p><em>Hong Kong | Mar 2023 – Sep 2024</em></p>
+
+    <h3>Senior Business Analyst – Hong Kong Broadband Network</h3>
+    <p style="color:var(--muted)">Hong Kong | Mar 2023 – Sep 2024</p>
     <ul>
       <li>Managed Salesforce & Oracle projects under Agile Scrum.</li>
-      <li>Automated 3 manual processes; reduced support tickets 15%.</li>
+      <li>Automated 3 manual processes; reduced support tickets 15 %.</li>
     </ul>
-    <h3>Product Owner (QQ Browser – Novel) @ Tencent Mobility Limited</h3>
-    <p><em>Shenzhen | Aug 2021 – Dec 2022</em></p>
+
+    <h3>Product Owner (QQ Browser – Novel) – Tencent Mobility Limited</h3>
+    <p style="color:var(--muted)">Shenzhen | Aug 2021 – Dec 2022</p>
     <ul>
-      <li>Drove loyalty campaigns → +5% engagement & retention.</li>
-      <li>SQL-based A/B tests cut acquisition cost 10%.</li>
+      <li>Drove loyalty campaigns → +5 % engagement & retention.</li>
+      <li>SQL-based A/B tests cut acquisition cost 10 %.</li>
     </ul>
+  </section>
+
+  <section class="card">
     <h2>Education</h2>
     <p>Jinan University – B.B.A. Marketing, 2020</p>
+  </section>
+
+  <section class="card">
     <h2>Expertise</h2>
-    <span class="badge">Salesforce</span>
-    <span class="badge">Oracle</span>
-    <span class="badge">SQL</span>
-    <span class="badge">Tableau</span>
-    <span class="badge">Power BI</span>
-    <span class="badge">Agile & Scrum</span>
-    <span class="badge">Figma</span>
+    <span class="pill">Salesforce</span>
+    <span class="pill">Oracle</span>
+    <span class="pill">SQL</span>
+    <span class="pill">Tableau</span>
+    <span class="pill">Power BI</span>
+    <span class="pill">Agile & Scrum</span>
+    <span class="pill">Figma</span>
+  </section>
+
+  <section class="card">
     <h2>Certificates</h2>
     <ul>
       <li>Microsoft Azure AI Fundamentals (AI-900) – Sep 2025</li>
       <li>Professional Scrum Master II (PSM II) – Jan 2024</li>
       <li>Professional Scrum Master I (PSM I) – Dec 2023</li>
     </ul>
-  </div>
+  </section>
+
   <footer>
-    Made with ❤️ by Corliss Chan &bull;
-    <a href="https://github.com/corlisschann-maker/corlisschann-maker.github.io">Source on GitHub</a>
+    Made with ❤️ by Corliss Chan •
+    <a href="https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io">Source on GitHub</a>
   </footer>
 </body>
 </html>
